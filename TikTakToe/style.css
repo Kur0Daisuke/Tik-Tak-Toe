@@ -1,0 +1,75 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	transition: 0.5s ease-in-out;
+	user-select: none;
+}
+
+body{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	background: radial-gradient(grey,rgba(0,0,0));
+	font-family: sans-serif;
+}
+.tiktaktoe{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px; 
+}
+.turnAnnounce,.winnerAnnounce{
+	position: absolute;
+	top: -50px;
+	font-size: 1.5em;
+	color: white;
+	text-transform: uppercase;
+	filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+}
+.winnerAnnounce{
+	top: 260px;
+	opacity: 0%;
+}
+.current,.winner{
+	border: 1px solid white;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+button{
+	width: 75px;
+	height: 75px;
+	vertical-align: top;
+	font-size: 2em;
+	border: 0;
+	background: rgba(0,0,0,0.2);
+	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+	border-top: 1px solid #ffffff50;
+	border-left: 0.5px solid #ffffff50;
+	border-radius: 10px;
+	color: #ffffff80;
+}
+button:hover{
+	transform: scale(1.05);
+	background: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.1)) ;
+}
+.win{
+	background: linear-gradient(grey,darkgrey);
+	border-top: 2px solid #ffffff50;
+	border-left: 1px solid #ffffff50;
+}
+.restart{
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border-radius: 10px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
