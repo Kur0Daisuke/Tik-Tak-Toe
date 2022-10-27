@@ -44,7 +44,7 @@ function Restart() {
 }
 
 function StyleWinners(winners) {
-	document.querySelector(".winner").innerText = current;
+	document.querySelector(".winner").innerHTML = current;
 	document.querySelector(".winnerAnnounce").style.opacity = "100%";
 	document.querySelector(".restart").style.display = "flex";
 	for (var i = 0; i < winners.length; i++) {

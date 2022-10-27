@@ -40,16 +40,19 @@ function Ai(row, id, htmlContent, mode) {
 		Check(row, id);
 		htmlContent.innerText = current;
 		htmlContent.disabled = true;
+		document.querySelector(".current").innerText = current;
 	}
 	if(!pause && mode == "Ai-E") {
 		if(!ended) {
 			current = "O"
 			AiEasyPlace();
+			document.querySelector(".current").innerText = current;
 		}
 	}else if(!pause && mode == "Ai-M") {
 		if(!ended) {
 			current = "O"
 			AiMediumPlace();
+			document.querySelector(".current").innerText = current;
 		}
 	}
 	
@@ -69,7 +72,10 @@ function AiMediumPlace(row, id) {
 				var cross1 = (tile[0][0] + tile[1][1] + tile[2][2]).toString().replaceAll(' ','')
 				var cross2 = (tile[0][2] + tile[1][1] + tile[2][0]).toString().replaceAll(' ','')
 				AiMediumPredict(verticle,horizontal,cross1,cross2,i,"OO");
-				AiMediumPredict(verticle,horizontal,cross1,cross2,i,"XX");
+				if(predictedMediumPlace.row == undefined) {
+					AiMediumPredict(verticle,horizontal,cross1,cross2,i,"XX");
+				}
+				
 			}
 			if(predictedMediumPlace.row !== undefined ) {
 				console.log(predictedMediumPlace)
@@ -78,7 +84,6 @@ function AiMediumPlace(row, id) {
 				document.querySelector(`.row${predictedMediumPlace.row+1}.button${predictedMediumPlace.col+1}`).disabled = true;
 				Check(predictedMediumPlace.row, predictedMediumPlace.col)
 				predictedMediumPlace = {};
-				
 				pause = false;
 			}else {
 				console.log(predictedMediumPlace)
@@ -88,6 +93,8 @@ function AiMediumPlace(row, id) {
 				Check(randomRow-1, randomCol-1)
 				pause = false;
 			}
+			current = "X"
+			document.querySelector(".current").innerText = current;
 		}, 500)
 	}else if(tile[randomRow-1][randomCol-1] !== " ") {
 		setTimeout(() =>{
@@ -107,6 +114,8 @@ function AiEasyPlace() {
 			document.querySelector(`.row${randomRow}.button${randomCol}`).disabled = true;
 			Check(randomRow-1, randomCol-1)
 			pause = false;
+			current = "X"
+			document.querySelector(".current").innerText = current;
 		}, 500)
 	}else if(tile[randomRow-1][randomCol-1] !== " ") {
 		setTimeout(() =>{
