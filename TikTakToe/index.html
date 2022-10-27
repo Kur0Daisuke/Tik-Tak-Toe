@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TikTakToe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<select onchange="ChangeMode(this.selectedIndex)">
+	<select class="selectLevel" onchange="ChangeMode(this.selectedIndex)">
 		<option>PvP</option>
 		<option>Ai(Easy)</option>
 		<option>Ai(Medium)</option>
@@ -30,9 +33,8 @@
 		</div>
 		<h1 class="winnerAnnounce"><span class="winner">X</span> won !</h1>
 		<div class="restart" onclick="Restart()">
-			Restart !
+			Restart
 		</div>
-
 	</div>	
 	<script type="text/javascript" src="js/util.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>

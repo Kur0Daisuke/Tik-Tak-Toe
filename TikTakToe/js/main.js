@@ -70,9 +70,9 @@ function AiMediumPlace(row, id) {
 				var cross2 = (tile[0][2] + tile[1][1] + tile[2][0]).toString().replaceAll(' ','')
 				AiMediumPredict(verticle,horizontal,cross1,cross2,i,"OO");
 				AiMediumPredict(verticle,horizontal,cross1,cross2,i,"XX");
-
 			}
 			if(predictedMediumPlace.row !== undefined ) {
+				console.log(predictedMediumPlace)
 				tile[predictedMediumPlace.row][predictedMediumPlace.col] = current;
 				document.querySelector(`.row${predictedMediumPlace.row+1}.button${predictedMediumPlace.col+1}`).innerText = "O"
 				document.querySelector(`.row${predictedMediumPlace.row+1}.button${predictedMediumPlace.col+1}`).disabled = true;
@@ -81,6 +81,7 @@ function AiMediumPlace(row, id) {
 				
 				pause = false;
 			}else {
+				console.log(predictedMediumPlace)
 				tile[randomRow-1][randomCol-1] = current;
 				document.querySelector(`.row${randomRow}.button${randomCol}`).innerText = "O"
 				document.querySelector(`.row${randomRow}.button${randomCol}`).disabled = true;

@@ -34,8 +34,8 @@ function Restart() {
 	for (var i = 1; i <= 3; i++) {
 		for (var j = 1; j <= 3; j++) {
 			document.querySelector(`.row${i}.button${j}`).innerHTML = " ";
-			document.querySelector(`.row${i}.button${j}`).disabled = false;
 			document.querySelector(`.row${i}.button${j}`).classList.remove("win");
+			document.querySelector(`.row${i}.button${j}`).disabled = false;
 		}
 	}
 }
@@ -63,26 +63,23 @@ function AiMediumPredict(verticle,horizontal,cross1,cross2, i, Aug) {
 				return predictedMediumPlace = { row: i, col: j }
 			}
 		}
-		console.log(predictedMediumPlace)
 	}else if(cross1 == Aug) {
 		for (var j = 0; j <= 2; j++) {
 			if(tile[j][j] == " ") {
 				return predictedMediumPlace = { row: j, col: j }
 			}
 		}
-		console.log(predictedMediumPlace)
+			
 	}else if(cross2 == Aug) {
-		for (var j = 0; j <= 2; j++) {
-			for (var r = 2; r >= 0; r--) {
-				if(tile[j][r] == " ") {
-					console.log("there")
-					predictedMediumPlace = { row: j, col: r };
-					return;
-				}
-				
-			}
-
+		if(tile[0][2] == " ") {
+			return predictedMediumPlace = { row: 0, col: 2 }
+		}else if(tile[1][1] == " ") {
+			return predictedMediumPlace = { row: 1, col: 1 }
+		}else if(tile[2][0] == " ") {
+			return predictedMediumPlace = { row: 2, col: 0 }
 		}
 	}
+	
+	
 }
 
