@@ -23,6 +23,16 @@ body{
 	justify-content: center;
 	align-items: center;
 	gap: 5px; 
+	animation: boardLoad 1s ease-in;
+}
+@keyframes boardLoad {
+	0%{
+		opacity: 0;
+		transform: scale(0);
+	}100%{
+		opacity: 100%;
+		transform: scale(1);
+	}
 }
 .turnAnnounce,.winnerAnnounce{
 	position: absolute;
@@ -103,4 +113,8 @@ button:hover{
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	border-top: 1px solid #ffffff50;
 	border-left: 0.5px solid #ffffff50;
+	animation: boardLoad 2s ease-in top;
+}
+.selectLevel option{
+	background-color: black;
 }
