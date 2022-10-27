@@ -16,7 +16,10 @@ function Check(row, id) {
 	}else if(tile[0][0] != " " && tile[0][1] != " " && tile[0][2] != " " &&
 		tile[1][0] != " " && tile[1][1] != " " && tile[1][2] != " " &&
 		tile[2][0] != " " && tile[2][1] != " " && tile[2][2] != " ") {
-		Restart();
+		document.querySelector(".winnerAnnounce").style.opacity = "100%";
+		document.querySelector(".winnerAnnounce").innerHTML = "Tie !";
+		document.querySelector(".restart").style.display = "flex";
+		ended = true;
 	}
 }
 
